@@ -1,11 +1,34 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using CreateBlankSolution.Models;
+using Newtonsoft.Json;
 
 namespace CreateBlankSolution.Classes
 {
     public class DotnetOperations
     {
+
+        /// <summary>
+        /// Root folder to show for creating a new solution
+        /// </summary>
+        public static string SolutionRootFolder { get; set; }
+
+        /// <summary>
+        /// Text to display in label on the form
+        /// </summary>
+        public static string AboutText { get; set; }
+
+        /// <summary>
+        /// Read appsetting.json for getting folder path and about text.
+        /// </summary>
+        public static void Initialize()
+        {
+            var settings = JsonConvert.DeserializeObject<ApplicationSettings>(File.ReadAllText("appsettings.json"));
+            SolutionRootFolder = settings.SolutionFolder;
+            AboutText = settings.About;
+
+        }
         /// <summary>
         /// Create a blank Visual Studio solution.
         /// Solution name is same as folder
