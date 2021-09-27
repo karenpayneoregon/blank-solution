@@ -16,3 +16,7 @@ This utility provides the ability to create a blank Visual Studio solution. Ther
 Once a new solution has been created the folder is opened in Windows Explorer, the developer can then inspect and copy the folder path to use in Visual Studio to open the new blank solution.
 
 Written using  .NET Framework 4.8 as some developers may not have moved to .NET Core yet
+
+- See `using-json branch` for a version which stored the default selection path in `appsettings.json`
+
+
