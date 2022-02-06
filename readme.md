@@ -1,4 +1,4 @@
-# About
+# Create new blank Visual Studio solution utility
 
 Simple user interface for `dotnet` new sln hard-wired to a specific path.
 
